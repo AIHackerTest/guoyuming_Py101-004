@@ -1,0 +1,11 @@
+{% extends "weather.html" %}
+{% block content %}
+    <p>
+      你查询过以下城市：
+    </p>
+    {% for i in entry %}
+      <ul>
+        <li> {{ i }} </li>
+      </ul>
+    {% endfor %}
+{% endblock %}

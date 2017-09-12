@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <title>{% block title %} 小明天气 {% endblock %}</title>
+  </head>
+    <body>
+
+      <div class="container">
+
+        <div class="row justify-content-md-center">
+          <img src="http://upload-images.jianshu.io/upload_images/201022-c01c0aaf52d6d71c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+          with="280" height="180" alt="Responsive image" />
+        </div>
+
+        <div class="row">
+          <div class="col col-lg-2">
+
+          </div>
+          <div class="col-md-auto">
+            <div id="menu">
+            {% block menu %}
+            <p>欢迎来到小明天气，输入城市名称直接查询天气,或点击‘帮助’查看用户指南</p>
+            <form method="GET" action="/user_input">
+                城市：<br>
+                <input type="text" class="form-control" placeholder="请输入城市名称"  name="city_name" >
+                <br>
+                <input type="submit" class="btn btn-primary" name="search" value="查询">
+                <input type="submit" class="btn btn-primary" name="help" value="帮助">
+                <input type="submit" class="btn btn-primary" name="history" value="历史">
+
+            </form>
+            {% endblock %}
+            </div>
+
+            <div id="content">
+              {% block content %}{% endblock %}
+            </div>
+          </div>
+          <div class="col col-lg-2">
+
+          </div>
+        </div>
+      </div>
+    </body>
+</html>
